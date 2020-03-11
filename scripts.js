@@ -12,9 +12,9 @@ let tablero = [
 let turnos = 1;
 let rojo = 0;
 let azul = 0;
-var ganador = 0;
 var gano;
 var contador = 0;
+let jugador = 0;
 
 function empate() {
     if (contador == 42 && ganador == 0) {
@@ -25,10 +25,12 @@ function empate() {
 
 function reiniciar() {
     location.reload(true);
+    turnos = 1;
+    ganador = 0;
+    contador = 0;
 }
 
 function INSERTAR(val) {
-    console.log(val)
     switch (val) {
         case 1:
             ejecutar(val)
@@ -59,6 +61,8 @@ function INSERTAR(val) {
         profundidad(val)
         validation()
         empate();
+        console.log(turnos);
+
     }
 
     function drawcolor(renglon, columna, posicion) {
@@ -140,15 +144,16 @@ function INSERTAR(val) {
     }
 
     function ganador() {
+        var gano = ""
 
-
-        if (turnos == 1 && ganador == 0) {
+        if (turnos == 1) {
             gano = "Azul"
             alert("Gano el color: " + gano)
-            ganador = 1;
+
         } else {
             alert("Gano el color: Rojo");
-            ganador = 1;
+
+
         }
 
 
