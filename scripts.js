@@ -143,7 +143,7 @@ function INSERTAR(val) {
 
 
         if (turnos == 1 && ganador == 0) {
-            gano = "Amarillo"
+            gano = "Azul"
             alert("Gano el color: " + gano)
             ganador = 1;
         } else {
